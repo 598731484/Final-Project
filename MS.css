@@ -1,0 +1,53 @@
+#p
+{
+    text-align: center;
+    color: rgb(9, 10, 1);
+    margin-bottom: 20px;
+}
+.span
+{
+    height: 25px;
+    width: 150px;
+    line-height: 25px;
+    display: inline-block;
+    border: solid 1px rgb(5, 252, 37);
+    margin-left: 20px;
+    margin-right: 20px;
+}
+#grid
+{
+    margin: auto;
+}
+.blocks
+{
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    display: block;
+    text-align: center;
+    border: solid 1px rgb(7, 7, 7);
+    user-select: none;
+    cursor: pointer;
+}
+.blocks:hover
+{
+    background: rgb(28, 190, 55);
+}
+
+body{
+    background-image:url(BackGround.jpeg);
+    background-size:cover;
+
+}
+
+#resetButton
+{
+    background-color: rgb(11, 217, 253);
+    border: none;
+    color: white;
+    padding: 30px 40px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 25px;
+}

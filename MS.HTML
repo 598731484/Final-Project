@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+        <title>MINESWEEPER</title>
+        <link rel="stylesheet" href="./MS.css">
+        
+        <script src="./MS.js"></script>
+        
+    </head>
+        
+    
+            <body ondragstart='return false' oncontextmenu='self.event.returnValue=false'> <!--Anti-dragging to generate new page & shield right-click menu-->
+            
+            <p id='p'>
+                <span class='span'>Mines left: <label id='count'>0</label></span>
+                <span class='span'>Time: <label id='time'>0</label>s</span>
+                <button onclick="start()">Start</button>
+                <input type="button" value="Restart" align="Center" onclick="location.reload()">
+                <select id="s">
+                    <option>--Choose a difficulty degree--</option>
+                    <option>Easy</option>
+                    <option>Medium</option>
+                    <option>Hard</option>
+                </select>
+            </p>
+
+            <table id='grid'></table>
+            
+            <script>
+                var row; //Row
+                var col; //Column
+                var maxCount; //Max-number of mines
+                var isFirstOpen = true; //Open the grid for the first time
+                var grid; //Initialization
+                var count; //Remaining mines 
+                var time=document.getElementById('time'); //Timing
+
+                function start()
+                {
+                    
+                    switch(document.getElementById("s").value)
+                    {
+                        case "Easy":{
+                            row=9; //Row
+                            col=9; //Column
+                            maxCount=10; //Max-number of mines
+                            isFirstOpen = true; //Open the grid for the first time
+                            grid=init_grid(); //Initialization
+                            count=document.getElementById('count'); //Remaining mines 
+                            count.innerHTML=maxCount; //Initialize the remaining mines
+                            time=document.getElementById('time'); //Timing
+                            timer=setInterval(function()
+                            {
+                                let seconds=(parseFloat(time.innerHTML)+0.1).toFixed(1);
+                                time.innerHTML=seconds;
+                            },100) //Timer
+                            break;
+                        }
+                        case "Medium":{
+                            row=16; //Row
+                            col=16; //Column
+                            maxCount=40; //Max-number of mines
+                            isFirstOpen = true; //Open the grid for the first time
+                            grid=init_grid(); //Initialization
+                            count=document.getElementById('count'); //Remaining mines 
+                            count.innerHTML=maxCount; //Initialize the remaining mines
+                            time=document.getElementById('time'); //Timing
+                            timer=setInterval(function()
+                            {
+                                let seconds=(parseFloat(time.innerHTML)+0.1).toFixed(1);
+                                time.innerHTML=seconds;
+                            },100) //Timer
+                            break;
+                        }
+                        case "Hard":{
+                            row=16; //Row
+                            col=30; //Column
+                            maxCount=99; //Max-number of mines
+                            isFirstOpen = true; //Open the grid for the first time
+                            grid=init_grid(); //Initialization
+                            count=document.getElementById('count'); //Remaining mines 
+                            count.innerHTML=maxCount; //Initialize the remaining mines
+                            time=document.getElementById('time'); //Timing
+                            timer=setInterval(function()
+                            {
+                                let seconds=(parseFloat(time.innerHTML)+0.1).toFixed(1);
+                                time.innerHTML=seconds;
+                            },100) //Timer
+                            break;
+                        }
+                    }
+                }
+            </script> 
+    </body>
+</html>
